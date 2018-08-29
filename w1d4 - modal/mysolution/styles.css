@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#products {
+  display: flex;
+  justify-content: space-around;
+}
+
+#modal_container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: cornflowerblue;
+}
+
+#modal_window {
+  max-width: 80vw;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.reveal {
+  visibility: visible;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+#product_2,
+#product_3 {
+  display: grid;
+}
+p {
+  font-family: "Play", sans-serif;
+}
+article {
+  display: grid;
+  text-align: center;
+}
+.button {
+  margin: 5em;
+  padding: 1em;
+  border-radius: 20px;
+}
+.button :hover {
+  color: cadetblue;
+  background-color: cadetblue;
+}
