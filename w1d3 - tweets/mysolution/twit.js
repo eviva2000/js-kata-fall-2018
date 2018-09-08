@@ -1,6 +1,6 @@
 "use strict";
 
-let tweetlist = "https://kea-alt-del.dk/twitter/api/";
+let tweetlist = "https://kea-alt-del.dk/twitter/api/?hashtag=es6";
 let template = document.querySelector("#tweetTemplate").content;
 let parent = document.querySelector("#parent");
 
@@ -11,13 +11,7 @@ function getData(link) {
 }
 function show(json) {
   console.log(json);
-  const myentries = Object.entries(json);
-  const myArray = myentries[0];
-  console.log(myArray);
-  const mySarray = myArray[1];
-  console.log(mySarray);
-
-  mySarray.forEach(function(tweet) {
+  json.statuses.forEach(function(tweet) {
     let clone = template.cloneNode(true);
     let user = clone.querySelector("#user span");
     let text = clone.querySelector("#text");
