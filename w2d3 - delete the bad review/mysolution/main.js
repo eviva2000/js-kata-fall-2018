@@ -12,7 +12,3 @@ function checkReview(i) {
 }
 
 lis.forEach(checkReview);
-
-// function displayDataBar(item, index) {
-//   item.style.height = dataArray[index] + "px";
-// }

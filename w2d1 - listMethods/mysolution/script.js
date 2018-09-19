@@ -1,7 +1,7 @@
 "use strict";
 
 function displayElement(element) {
-  console.log("&#9671" + element.textContent);
+  console.log( element.textContent);
 }
 
 function listMethods(elementId) {
