@@ -27,24 +27,13 @@
     <script>
         let sample = document.querySelector('.sample');
         let text = document.querySelector('#text');
-        // function generateHslaColors(amount) {
-        //     let colors = []
-        //     let huedelta = Math.trunc(360 / amount)
-
-        //     for (let i = 0; i < amount; i++) {
-        //         let hue = i * huedelta
-        //         colors.push(`hsla(${hue},70%,70%`)
-        //     }
-
-        //     return colors
-        // };
 
 
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 5; i++) {
             let hue = i * 20;
             const rect = document.createElement("div");
-            var h = document.createElement("H4")                // Create a <h1> element
-            var t = document.createTextNode(hue + " 60% " + " 70% ");     // Create a text node
+            let h = document.createElement("H4")                // Create a <h1> element
+            let t = document.createTextNode(hue + " 60% " + " 70% ");     // Create a text node
             h.appendChild(t);
             rect.style.height = "120px";
             rect.style.width = "120px";
