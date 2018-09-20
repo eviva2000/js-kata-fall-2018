@@ -11,37 +11,53 @@
             width: 100vw;
 
             background-color: azure;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around
+        }
 
+        button {
+            padding: 1em;
+            margin: 1em;
+            border-radius: 5px
         }
     </style>
 </head>
 
 <body>
+
     <div class="sample">
         <div id="text"></div>
     </div>
 
-
+    <button>Regenerate</button>
 
 
     <script>
+        let button = document.querySelector('button');
         let sample = document.querySelector('.sample');
         let text = document.querySelector('#text');
 
 
         for (let i = 0; i < 5; i++) {
-            let hue = i * 20;
+            let hue = Math.floor(Math.random() * 1000);;
             const rect = document.createElement("div");
             let h = document.createElement("H4")                // Create a <h1> element
             let t = document.createTextNode(hue + " 60% " + " 70% ");     // Create a text node
             h.appendChild(t);
             rect.style.height = "120px";
             rect.style.width = "120px";
-            rect.style.backgroundColor = `hsl(${i * 20},70%,70%)`;
+            rect.style.backgroundColor = `hsl(${hue},70%,70%)`;
             sample.appendChild(rect);
             sample.appendChild(h)
 
         }
+        button.addEventListener('click', myFunction);
+        function myFunction() {
+            location.reload();
+        }
+
+
     </script>
 </body>
 
