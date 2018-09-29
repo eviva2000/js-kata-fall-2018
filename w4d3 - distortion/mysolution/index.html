@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #parent {
+            background-color: bisque;
+            width: 500px;
+            height: 500px;
+
+        } */
+
+        h3 {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1em;
+            background-color: cornflowerblue;
+            padding: 1em
+        }
+
+        #bar {
+            background-color: blueviolet
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="parent"></div>
+    <script>
+        let parent = document.querySelector('#parent');
+        let text = document.createElement('h3');
+        let bar = document.createElement('div');
+        bar.style.width = "30px";
+        bar.setAttribute('id', 'bar');
+
+        function fetchData() {
+            fetch("http://kea-alt-del.dk/kata-distortion/").then(res => res.json()).then(function getData(data) {
+                let number = data.inQueue
+                console.log(number);
+                bar.setAttribute('height', number);
+                text.textContent = `Hi, there are ${number} people in the queue!`;
+                parent.appendChild(text);
+                parent.appendChild(bar);
+
+
+            })
+
+        }
+        setInterval(fetchData, 5000);
+        // function getData(json) {
+        //     let number = json.inQueue
+        //     console.log(number);
+
+        //     let text = document.createElement('h3');
+        //     text.textContent = number;
+        //     parent.appendChild(text)
+        // }
+
+    </script>
+</body>
+
+</html>

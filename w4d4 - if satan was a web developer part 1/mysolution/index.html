@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>satan is developer</title>
+</head>
+
+<body>
+    <h1></h1>
+    <button class="add">+</button>
+    <button>submit</button>
+
+
+    <script>
+        let addButton = document.querySelector('button.add');
+        let h1 = document.querySelector('h1');
+
+        let number = 2164000000;
+        showNumber(number);
+        addButton.addEventListener('click', () => {
+            number++;
+            showNumber(number);
+        })
+
+        function showNumber(number) {
+
+            let numAsString = number.toString();
+            h1.textContent = `( ${numAsString.substring(0, 3)}) ${numAsString.substring(3, 6)} -${numAsString.substring(6, 10)}`
+            // let number =
+        }
+    </script>
+
+</body>
+
+</html>
