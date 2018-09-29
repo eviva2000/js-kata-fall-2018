@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bubbles</title>
+    <style>
+        /* #bubble {
+
+            border-radius: 50%;
+            border: 2px solid black;
+
+        } */
+
+        .wrapper {
+            display: flex;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper"></div>
+    <svg viewBox="0 0 400 400">
+
+
+    </svg>
+    <script>
+        let wrapper = document.querySelector('.wrapper');
+
+        const NS = "http://www.w3.org/2000/svg";
+
+        const svg = document.querySelector("svg");
+        for (let i = 1; i < 800; i++) {
+            const bubble = document.createElementNS(NS, "circle");
+            let x = Math.floor(Math.random() * 700);
+            let y = Math.floor(Math.random() * 50);
+            let r = Math.floor(Math.random() * 10) + 1;
+
+            bubble.setAttribute('id', 'bubble');
+            bubble.setAttribute('cx', x);
+            bubble.setAttribute('cy', y);
+            bubble.setAttribute('r', r);
+            let color = Math.floor(Math.random() * 1000);
+            bubble.setAttribute('fill', `hsl(${color},70%,70%)`);
+            bubble.setAttribute('stroke', 'black');
+
+            svg.appendChild(bubble);
+            bubble.addEventListener('mouseenter', changeColor)
+            function changeColor() {
+                let hue = Math.floor(Math.random() * 1000);
+                bubble.setAttribute('fill', `hsl(${hue},70%,70%)`);
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+
+</html>
