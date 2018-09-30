@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dice roller</title>
+    <style>
+        th {
+            padding-right: 2em
+        }
+
+        #value {
+            white-space: pre
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>values</th>
+                <th>Times</th>
+            </tr>
+        <tbody>
+            <tr>
+                <td id="value">1</td>
+                <td id="one"></td>
+
+            </tr>
+            <tr>
+                <td id="value">2</td>
+                <td id="two">mom</td>
+
+            </tr>
+            <tr>
+                <td id="value">3</td>
+                <td id="three"></td>
+
+            </tr>
+
+            <tr>
+                <td id="value">4</td>
+                <td id="four"></td>
+
+            </tr>
+            <tr>
+                <td id="value">5</td>
+                <td id="five"></td>
+
+            </tr>
+            <tr>
+                <td id="value">6</td>
+                <td id="six"></td>
+
+            </tr>
+            <tr>
+
+                <td id="total"></td>
+
+            </tr>
+        </tbody>
+        </thead>
+
+    </table>
+    <script>
+        let valueCul = document.querySelector('#value');
+        let timeCul = document.querySelector('#time');
+        let one = document.querySelector('#one');
+        let two = document.querySelector('#two');
+        let three = document.querySelector('#three');
+        let four = document.querySelector('#four');
+        let five = document.querySelector('#five');
+        let six = document.querySelector('#six');
+        let total = document.querySelector('#total');
+
+
+
+        const diceValues = {
+            totalRolls: 0,
+            1: 0,
+            2: 0,
+            3: 4,
+            4: 0,
+            5: 0,
+            6: 0
+        };
+        let totalrolls = diceValues.totalRolls;
+        // let valuesArray = Object.values(diceValues);
+
+        for (i = 0; i < 100; i++) {
+            let rnd = Math.floor(Math.random() * 6) + 1;
+            console.log(rnd);
+            diceValues[rnd]++;
+            totalrolls++;
+            one.innerHTML = diceValues[1];
+            two.innerHTML = diceValues[2];
+            three.innerHTML = diceValues[3];
+            four.innerHTML = diceValues[4];
+            five.innerHTML = diceValues[5];
+            six.innerHTML = diceValues[6];
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- console.log(Object.values(object1)); -->
+
+<!-- valueCul.innerHTML = valuesArray.join('\n') baraye neshoon dadan 
+item haye array dar yek sotoon -->
