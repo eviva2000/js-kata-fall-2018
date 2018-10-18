@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" type="text/javascript"></script>
     <title>Dice roller</title>
     <style>
         th {
@@ -13,6 +14,17 @@
 
         #value {
             white-space: pre
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        canvas {
+            max-width: 60vw;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -65,46 +77,11 @@
         </thead>
 
     </table>
-    <script>
-        let valueCul = document.querySelector('#value');
-        let timeCul = document.querySelector('#time');
-        let one = document.querySelector('#one');
-        let two = document.querySelector('#two');
-        let three = document.querySelector('#three');
-        let four = document.querySelector('#four');
-        let five = document.querySelector('#five');
-        let six = document.querySelector('#six');
-        let total = document.querySelector('#total');
+    <main>
 
-
-
-        const diceValues = {
-            totalRolls: 0,
-            1: 0,
-            2: 0,
-            3: 4,
-            4: 0,
-            5: 0,
-            6: 0
-        };
-        let totalrolls = diceValues.totalRolls;
-        // let valuesArray = Object.values(diceValues);
-
-        for (i = 0; i < 100; i++) {
-            let rnd = Math.floor(Math.random() * 6) + 1;
-            console.log(rnd);
-            diceValues[rnd]++;
-            totalrolls++;
-            one.innerHTML = diceValues[1];
-            two.innerHTML = diceValues[2];
-            three.innerHTML = diceValues[3];
-            four.innerHTML = diceValues[4];
-            five.innerHTML = diceValues[5];
-            six.innerHTML = diceValues[6];
-
-        }
-
-
+        <canvas id="random-chart" width="400" height="400"></canvas>
+    </main>
+    <script src="script.js">
 
 
 
